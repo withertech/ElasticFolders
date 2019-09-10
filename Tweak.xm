@@ -1,5 +1,6 @@
 #import <UIKit/UIKit.h>
 
+%group enabled
 %hook BSUIAnimationFactorySettings
 - (bool)slowAnimations {
     return 1;
@@ -60,4 +61,14 @@
     %orig;
 }
 %end
+%end
+
+%ctor {
+    NSDictionary *bundleDefaults = [[NSUserDefaults standardUserDefaults]persistentDomainForName:@"com.withertech.elasticfoldersprefs"];
+    
+    id isEnabled = [bundleDefaults valueForKey:@"isEnabled"];
+    if ([isEnabled isEqual:@1]) {
+        %init(enabled)
+    }
+}
 
