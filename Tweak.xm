@@ -1,6 +1,7 @@
 #import <UIKit/UIKit.h>
 
 %group enabled
+    NSDictionary *bundleDefaults1 = [[NSUserDefaults standardUserDefaults]persistentDomainForName:@"com.withertech.elasticfoldersprefs"];
 %hook BSUIAnimationFactorySettings
 - (bool)slowAnimations {
     return 1;
@@ -8,29 +9,49 @@
 %end
 
 %hook BSMutableSpringAnimationSettings
+
 - (void)setDelay:(double)arg1 {
-    arg1 = 0.15;
+    id delay = [bundleDefaults1 valueForKey:@"delay"];
+    NSString *delayS = delay;
+    double delayD = [delayS doubleValue];
+//    arg1 = 0.15;
+    arg1 = delayD;
     %orig;
 }
 %end
 
 %hook BSMutableSpringAnimationSettings
+
 - (void)setMass:(double)arg1 {
-    arg1 = 20;
+    id mass = [bundleDefaults1 valueForKey:@"mass"];
+    NSString *massS = mass;
+    double massD = [massS doubleValue];
+//    arg1 = 20;
+    arg1 = massD;
     %orig;
 }
 %end
 
 %hook BSMutableSpringAnimationSettings
+
 - (void)setStiffness:(double)arg1 {
-    arg1 = 1000;
+    id stiffness = [bundleDefaults1 valueForKey:@"stiffness"];
+    NSString *stiffnessS = stiffness;
+    double stiffnessD = [stiffnessS doubleValue];
+//    arg1 = 1000;
+    arg1 = stiffnessD;
     %orig;
 }
 %end
 
 %hook BSMutableSpringAnimationSettings
+
 - (void)setDamping:(double)arg1 {
-    arg1 = 200;
+    id damping = [bundleDefaults1 valueForKey:@"damping"];
+    NSString *dampingS = damping;
+    double dampingD = [dampingS doubleValue];
+//    arg1 = 200;
+    arg1 = dampingD;
     %orig;
 }
 %end
@@ -61,6 +82,7 @@
     %orig;
 }
 %end
+
 %end
 
 %ctor {

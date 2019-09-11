@@ -2,7 +2,7 @@ include $(THEOS)/makefiles/common.mk
 
 BUNDLE_NAME = ElasticFoldersPrefs
 
-ElasticFoldersPrefs_FILES = EFARootListController.m EFADelayListController.m EFAMassListController.m EFAStiffnessListController.m EFADampingListController.m
+ElasticFoldersPrefs_FILES = EFARootListController.m
 ElasticFoldersPrefs_INSTALL_PATH = /Library/PreferenceBundles
 ElasticFoldersPrefs_FRAMEWORKS = UIKit
 ElasticFoldersPrefs_PRIVATE_FRAMEWORKS = Preferences

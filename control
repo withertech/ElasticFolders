@@ -1,10 +1,10 @@
 Package: com.withertech.elasticfolders
 Name: Elastic Folder Animations
 Author: WitherTech
-Description: Nice smooth elastic Folder icons and background animation
+Description: Nice smooth customizable elastic Folder icons and background animation
 Depiction: http://repo.withertech.com/depictions/?p=com.withertech.elasticfolders
 Depends: mobilesubstrate
 Maintainer: WitherTech
 Architecture: iphoneos-arm
 Section: Tweaks
-Version: 0.0.1
+Version: 0.0.2
