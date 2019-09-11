@@ -58,6 +58,12 @@
 
 %hook BSMutableSpringAnimationSettings
 - (void)setSpeed:(float)arg1 {
+   id speed = [bundleDefaults1 valueForKey:@"speed"];
+   NSString *speedS = speed;
+   double speedD = [speedS floatValue];
+   if (![speed isEqual:nil]) {
+      arg1 = dampingD;
+}
 }
 %end
 
