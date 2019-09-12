@@ -62,8 +62,8 @@
    NSString *speedS = speed;
    double speedD = [speedS floatValue];
    if (![speed isEqual:nil]) {
-      arg1 = dampingD;
-}
+      arg1 = speedD;
+   }
 }
 %end
 
@@ -74,6 +74,12 @@
 
 %hook BSMutableSpringAnimationSettings
 - (void)setInitialVelocity:(double)arg1 {
+    id initVel = [bundleDefaults valueForKey:@"initVel"];
+    NSString *initVelS = initVel;
+    double initVelD = [initVelS floatValue];
+    if (![initVel isEqual:nil]) {
+        arg1 = initVelD;
+    }
 }
 %end
 
