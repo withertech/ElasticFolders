@@ -1,0 +1,21 @@
+{
+    "terminal.integrated.setLocaleVariables": false,
+    "clang.objcflags": [
+        "-target", "/home/toor/theos/toolchain/linux/iphone/bin/arm64-apple-darwin14",
+        "-arch", "arm64",
+        "-isysroot", "/home/toor/theos/sdks/iPhoneOS12.4.sdk",
+        "-I/home/toor/theos/include",
+        "-I/home/toor/theos/vendor/include",
+        "-I/home/toor/theos/include/_fallback",
+        "-DTARGET_IPHONE=1",
+        "-DDEBUG",
+        "-miphoneos-version-min=6.0",
+        "-fobjc-arc",
+        "-Wall",
+        "-Werror"
+    ],
+    "files.associations": {
+        "*.h": "objective-c",
+        "*.xm": "objective-c"
+    }
+}

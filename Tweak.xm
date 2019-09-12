@@ -1,7 +1,7 @@
 #import <UIKit/UIKit.h>
 
 %group enabled
-    NSDictionary *bundleDefaults1 = [[NSUserDefaults standardUserDefaults]persistentDomainForName:@"com.withertech.elasticfoldersprefs"];
+    NSDictionary *bundleDefaults = [[NSUserDefaults standardUserDefaults]persistentDomainForName:@"com.withertech.elasticfoldersprefs"];
 %hook BSUIAnimationFactorySettings
 - (bool)slowAnimations {
     return 1;
@@ -11,7 +11,7 @@
 %hook BSMutableSpringAnimationSettings
 
 - (void)setDelay:(double)arg1 {
-    id delay = [bundleDefaults1 valueForKey:@"delay"];
+    id delay = [bundleDefaults valueForKey:@"delay"];
     NSString *delayS = delay;
     double delayD = [delayS doubleValue];
 //    arg1 = 0.15;
@@ -23,7 +23,7 @@
 %hook BSMutableSpringAnimationSettings
 
 - (void)setMass:(double)arg1 {
-    id mass = [bundleDefaults1 valueForKey:@"mass"];
+    id mass = [bundleDefaults valueForKey:@"mass"];
     NSString *massS = mass;
     double massD = [massS doubleValue];
 //    arg1 = 20;
@@ -35,7 +35,7 @@
 %hook BSMutableSpringAnimationSettings
 
 - (void)setStiffness:(double)arg1 {
-    id stiffness = [bundleDefaults1 valueForKey:@"stiffness"];
+    id stiffness = [bundleDefaults valueForKey:@"stiffness"];
     NSString *stiffnessS = stiffness;
     double stiffnessD = [stiffnessS doubleValue];
 //    arg1 = 1000;
@@ -47,7 +47,7 @@
 %hook BSMutableSpringAnimationSettings
 
 - (void)setDamping:(double)arg1 {
-    id damping = [bundleDefaults1 valueForKey:@"damping"];
+    id damping = [bundleDefaults valueForKey:@"damping"];
     NSString *dampingS = damping;
     double dampingD = [dampingS doubleValue];
 //    arg1 = 200;
@@ -58,12 +58,12 @@
 
 %hook BSMutableSpringAnimationSettings
 - (void)setSpeed:(float)arg1 {
-   id speed = [bundleDefaults1 valueForKey:@"speed"];
+   id speed = [bundleDefaults valueForKey:@"speed"];
    NSString *speedS = speed;
    double speedD = [speedS floatValue];
    if (![speed isEqual:nil]) {
-      arg1 = dampingD;
-}
+      arg1 = speedD;
+   }
 }
 %end
 
@@ -74,6 +74,12 @@
 
 %hook BSMutableSpringAnimationSettings
 - (void)setInitialVelocity:(double)arg1 {
+    id initVel = [bundleDefaults valueForKey:@"initVel"];
+    NSString *initVelS = initVel;
+    double initVelD = [initVelS floatValue];
+    if (![initVel isEqual:nil]) {
+        arg1 = initVelD;
+    }
 }
 %end
 
@@ -92,9 +98,9 @@
 %end
 
 %ctor {
-    NSDictionary *bundleDefaults = [[NSUserDefaults standardUserDefaults]persistentDomainForName:@"com.withertech.elasticfoldersprefs"];
+    NSDictionary *bundleDefaultsCtor = [[NSUserDefaults standardUserDefaults]persistentDomainForName:@"com.withertech.elasticfoldersprefs"];
     
-    id isEnabled = [bundleDefaults valueForKey:@"isEnabled"];
+    id isEnabled = [bundleDefaultsCtor valueForKey:@"isEnabled"];
     if ([isEnabled isEqual:@1]) {
         %init(enabled)
     }
