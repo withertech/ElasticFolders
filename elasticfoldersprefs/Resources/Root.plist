@@ -118,6 +118,16 @@
 			<key>placeholder</key>
 			<string>200</string>
 		</dict>
+		<dict>
+			<key>cell</key>
+			<string>PSLinkListCell</string>
+			<key>detail</key>
+			<string>Test</string>
+			<key>isController</key>
+			<true/>
+			<key>label</key>
+			<string>Test</string>
+		</dict>
 	</array>
 	<key>title</key>
 	<string>Elastic Folder Animation</string>
