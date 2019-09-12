@@ -36,7 +36,7 @@
 			<key>cell</key>
 			<string>PSLinkCell</string>
 			<key>detail</key>
-			<string>Optional</string>
+			<string>EFAOptionalListController</string>
 			<key>isController</key>
 			<true/>
 			<key>label</key>

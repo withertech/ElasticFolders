@@ -1,5 +1,5 @@
 #import <Preferences/PSListController.h>
 
-@interface EFARequiredListController : PSListController
+@interface EFAOptionalListController : PSListController
 
 @end

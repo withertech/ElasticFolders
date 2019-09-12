@@ -3,8 +3,45 @@
 <plist version="1.0">
 <dict>
 	<key>items</key>
-	<array/>
+	<array>
+		<dict>
+			<key>cell</key>
+			<string>PSGroupCell</string>
+			<key>label</key>
+			<string>Folder Speed</string>
+		</dict>
+		<dict>
+			<key>cell</key>
+			<string>PSEditTextCell</string>
+			<key>defaults</key>
+			<string>com.withertech.elasticfoldersprefs</string>
+			<key>isDecimalPad</key>
+			<true/>
+			<key>key</key>
+			<string>speed</string>
+			<key>label</key>
+			<string>Speed</string>
+		</dict>
+		<dict>
+			<key>cell</key>
+			<string>PSGroupCell</string>
+			<key>label</key>
+			<string>Folder Initial Velocity</string>
+		</dict>
+		<dict>
+			<key>cell</key>
+			<string>PSEditTextCell</string>
+			<key>defaults</key>
+			<string>com.withertech.elasticfoldersprefs</string>
+			<key>isDecimalPad</key>
+			<true/>
+			<key>key</key>
+			<string>initVel</string>
+			<key>label</key>
+			<string>Initial Velocity</string>
+		</dict>
+	</array>
 	<key>title</key>
-	<string>Elastic Folder Animation Test</string>
+	<string>Elastic Folder Animation Optional</string>
 </dict>
 </plist>
