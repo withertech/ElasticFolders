@@ -1,3 +1,3 @@
 #!/bin/bash
 source ~/.bashrc
-make package
+make package install
