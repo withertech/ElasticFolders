@@ -1,3 +1,3 @@
 #!/bin/bash
 source ~/.bashrc
-make package install
+make package install > Install.log

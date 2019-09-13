@@ -58,12 +58,10 @@
 
 %hook BSMutableSpringAnimationSettings
 - (void)setSpeed:(float)arg1 {
-   id speed = [bundleDefaults valueForKey:@"speed"];
-   NSString *speedS = speed;
-   double speedD = [speedS floatValue];
-   if (![speed isEqual:nil]) {
-      arg1 = speedD;
-   }
+    id speed = [bundleDefaults valueForKey:@"speed"];
+    NSString *speedS = speed;
+    float speedf = [speedS floatValue];
+    arg1 = speedf;
 }
 %end
 
@@ -77,9 +75,7 @@
     id initVel = [bundleDefaults valueForKey:@"initVel"];
     NSString *initVelS = initVel;
     double initVelD = [initVelS floatValue];
-    if (![initVel isEqual:nil]) {
-        arg1 = initVelD;
-    }
+    arg1 = initVelD;
 }
 %end
 
