@@ -1,6 +1,6 @@
 Package: com.withertech.elasticfolders
 Name: Elastic Folder Animations
-Author: WitherTech
+Author: WitherTech <witherking@withertech.com>
 Description: Nice smooth customizable elastic Folder icons and background animation
 Depiction: http://repo.withertech.com/depictions/?p=com.withertech.elasticfolders
 Depends: mobilesubstrate
